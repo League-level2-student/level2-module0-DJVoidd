@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
 
-public class _01_RobotRace {
+public class _01_RobotRace3 {
 	//1. make a main method
 	public static void main(String[] args) {
 
@@ -18,7 +18,7 @@ public class _01_RobotRace {
 		for (int i = 0; i < 9; i++) {
 			robs[i] = new Robot();
 			//4. make each robot start at the bottom of the screen, side by side, facing up
-			robs[i].setX(i*100 + 50);
+			robs[i].setX(400);
 			robs[i].setY(600);
 			robs[i].setSpeed(100);
 
@@ -30,13 +30,20 @@ public class _01_RobotRace {
 		JOptionPane.showMessageDialog(null, "Start Race?");
 		while(finish) {
 			for (int i = 0; i < robs.length; i++) {
-				robs[i].move(ran.nextInt(50));
-				System.out.println(robs[i].getY());
-				if (robs[i].getY() < 0) {
-					finish = false;
-					int j = i+1;
-					JOptionPane.showMessageDialog(null, "Robot #" + j + " won!");
+				if (ran.nextBoolean()) {
+					
 				}
+				
+				
+				
+				
+//				robs[i].move(ran.nextInt(50));
+//				System.out.println(robs[i].getY());
+//				if (robs[i].getY() < 0) {
+//					finish = false;
+//					int j = i+1;
+//					JOptionPane.showMessageDialog(null, "Robot #" + j + " won!");
+//				}
 			}
 		}
 	}
