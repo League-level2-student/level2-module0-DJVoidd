@@ -18,32 +18,33 @@ public class _01_RobotRace3 {
 		for (int i = 0; i < 9; i++) {
 			robs[i] = new Robot();
 			//4. make each robot start at the bottom of the screen, side by side, facing up
-			robs[i].setX(400);
-			robs[i].setY(600);
-			robs[i].setSpeed(100);
-
+			robs[i].setX(0);
+			robs[i].setY(295);
+			robs[i].setSpeed(10000);
+			robs[i].setAngle(2);
 		}
 		//5. use another for loop to iterate through the array and make each robot move 
 		//   a random amount less than 50.
 		Random ran = new Random();
 		Boolean finish = true;
-		JOptionPane.showMessageDialog(null, "Start Race?");
+		JOptionPane.showConfirmDialog(null, "Start Race?");
 		while(finish) {
 			for (int i = 0; i < robs.length; i++) {
-				if (ran.nextBoolean()) {
-					
+				if (ran.nextBoolean() == true) {
+					robs[i].move(5);
+					robs[i].turn(2);
 				}
 				
 				
 				
 				
 //				robs[i].move(ran.nextInt(50));
-//				System.out.println(robs[i].getY());
-//				if (robs[i].getY() < 0) {
-//					finish = false;
-//					int j = i+1;
-//					JOptionPane.showMessageDialog(null, "Robot #" + j + " won!");
-//				}
+			
+				if (robs[i].getY() == 300 && robs[i].getX() == 0) {
+					finish = false;
+					int j = i+1;
+					JOptionPane.showMessageDialog(null, "Robot #" + j + " won!");
+				}
 			}
 		}
 	}
